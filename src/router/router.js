@@ -3,8 +3,13 @@ import { routes } from "./routes";
 
 const Router = () => (
   <Switch>
-    {routes.map((route) => (
-      <Route exact path={route.path} component={route.component} />
+    {routes.map((route, i) => (
+      <Route
+        exact
+        key={"route" + i}
+        path={route.path}
+        component={route.component}
+      />
     ))}
     <Redirect to="/" />
   </Switch>
