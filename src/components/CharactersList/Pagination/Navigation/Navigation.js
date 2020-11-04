@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer, useContext } from "react";
 import { Context } from "../../reducer";
-import { Button } from "./Button/Button";
+import { Button } from "../Button/Button";
 
 export const Navigation = () => {
   const { dispatch } = useContext(Context);
