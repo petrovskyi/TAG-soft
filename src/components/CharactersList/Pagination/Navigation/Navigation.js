@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer, useContext } from "react";
-import { Context } from "../reducer";
+import { Context } from "../../reducer";
 import { Button } from "./Button/Button";
 
 export const Navigation = () => {
