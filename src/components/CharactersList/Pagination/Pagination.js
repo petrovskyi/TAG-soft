@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from "react";
-import { service } from "../../api/service";
+import { service } from "../../../api/service";
 
 export const PaginationList = ({ pagesAmount, dispatch }) => {
   function createPagination(amount = 0) {

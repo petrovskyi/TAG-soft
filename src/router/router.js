@@ -3,10 +3,10 @@ import { routes } from "./routes";
 
 const Router = () => (
   <Switch>
-    {routes.map((route, i) => (
+    {routes.map((route) => (
       <Route
         exact
-        key={"route" + i}
+        key={route.path}
         path={route.path}
         component={route.component}
       />

@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer } from "react";
 import { service } from "../api/service";
-import { Table } from "../components/Table/Table";
-import { PaginationList } from "../components/Pagination/Pagination";
+import { Table } from "../components/CharactersList/Table/Table";
+import { PaginationList } from "../components/CharactersList/Pagination/Pagination";
 
 const initialState = {
   initPage: service.url,
@@ -32,7 +32,7 @@ export const CharacterList = () => {
   useEffect(() => {
     const updateState = async () => {
       const response = await service.getCharactersList();
-      console.log(response);
+
       dispatch({ type: "setFetchedData", payload: response });
     };
 
@@ -42,7 +42,8 @@ export const CharacterList = () => {
   return (
     <section>
       <h2>characters list</h2>
-
+      <hr />
+      <Table characters={state.results} />
       <PaginationList pagesAmount={state.info.pages} />
     </section>
   );
