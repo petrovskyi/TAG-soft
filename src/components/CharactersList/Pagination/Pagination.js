@@ -1,11 +1,18 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useContext } from "react";
+import { Context } from "../reducer";
+import { Navigation } from "./Navigation/Navigation";
 import { service } from "../../../api/service";
 
-export const PaginationList = ({ pagesAmount, dispatch }) => {
+export const PaginationList = () => {
+  const { state, dispatch } = useContext(Context);
+
+  const paginationDirection = ["prev", "next"];
+  const pagesAmount = state.info.pages;
+
   function createPagination(amount = 0) {
     const pagination = [];
     for (let page = 0; page < amount; page++) {
-      const id = service.url + `?page=${page}`;
+      const id = service.apiURL + service.userQuery + `?page=${page}`;
 
       pagination.push(
         <li key={"pagination" + page} id={id}>
@@ -16,15 +23,19 @@ export const PaginationList = ({ pagesAmount, dispatch }) => {
     return pagination;
   }
 
-  function handlePagination(e) {
+  function handlePaginationPageClick(e) {
     const newPage = e.target.id;
+
     dispatch({ type: "setPage", payload: newPage });
   }
 
   return (
-    <section>
+    <div>
       <h2>pagination list</h2>
-      <ul onClick={handlePagination}>{createPagination(pagesAmount)}</ul>
-    </section>
+      <Navigation />
+      <ul onClick={handlePaginationPageClick}>
+        {createPagination(pagesAmount)}
+      </ul>
+    </div>
   );
 };

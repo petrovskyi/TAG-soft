@@ -1,8 +1,12 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useContext } from "react";
+import { Context } from "../reducer";
 import { Head } from "./Head/Head";
 import { Body } from "./Body/Body";
 
-export const Table = ({ characters }) => {
+export const Table = () => {
+  const { state } = useContext(Context);
+
+  const characters = state.results;
   const keys = ["id", "name"];
 
   function extractFields(el) {
@@ -18,16 +22,11 @@ export const Table = ({ characters }) => {
   }
 
   const formattedData = formatData(characters);
-  // const headKeys = Object.keys(formattedData);
-  // const bodyValues = Object.values(formattedData);
-  // console.log(formattedData);
+
   return (
-    <>
-      <h2>table</h2>
-      <table>
-        <Head keys={keys} />
-        <Body values={formattedData} />
-      </table>
-    </>
+    <table>
+      <Head keys={keys} />
+      <Body values={formattedData} />
+    </table>
   );
 };

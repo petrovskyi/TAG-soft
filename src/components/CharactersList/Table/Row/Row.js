@@ -4,11 +4,14 @@ import { Cell } from "../Cell/Cell";
 export const Row = ({ keyChildren, data }) => {
   const isReadyToShow = Array.isArray(data);
 
-  if (isReadyToShow) return <tr key={keyChildren}>{data}</tr>;
+  function extractValues(element) {
+    return Object.values(element);
+  }
+  function generateCell(values) {
+    return values.map((value) => <Cell key={"cell" + value} value={value} />);
+  }
 
-  const extractValues = (element) => Object.values(element);
-  const generateCell = (values) =>
-    values.map((value) => <Cell key={"cell" + value} value={value} />);
+  if (isReadyToShow) return <tr key={keyChildren}>{data}</tr>;
 
   const bodyCells = generateCell(extractValues(data));
 
