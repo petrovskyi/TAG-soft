@@ -18,7 +18,7 @@ export const Pagination = () => {
 
       pagination.push(
         <li
-          className={selected ? styles.selected : null}
+          style={{ color: selected ? "red" : "lightgrey" }}
           key={"pagination" + page}
           id={id}
         >

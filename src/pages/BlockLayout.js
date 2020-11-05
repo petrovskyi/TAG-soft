@@ -1,8 +1,4 @@
 import React from "react";
+import { Block } from "../components/BlockLayout/Block";
 
-export const BlockLayout = () => (
-  <>
-    <section>block layout</section>
-    <hr />
-  </>
-);
+export const BlockLayout = () => <Block />;

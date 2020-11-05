@@ -6,7 +6,7 @@ import { Button } from "../components/shared/Button";
 import { Context } from "../components/Main/reducer";
 import { service } from "../api/service";
 
-import "../components/CharactersList/CharactersList.module.scss";
+import styles from "../components/CharactersList/CharactersList.module.scss";
 
 export const CharacterList = () => {
   const { state, dispatch } = useContext(Context);
@@ -25,9 +25,9 @@ export const CharacterList = () => {
   }
 
   return (
-    <section>
+    <section className={styles.container}>
       <Pagination />
-      <hr />
+
       <Button action={handleSortByName} warning={true}>
         sort by name
       </Button>

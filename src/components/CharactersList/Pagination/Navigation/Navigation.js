@@ -10,12 +10,13 @@ export const Navigation = () => {
   function generatePaginationButton() {
     const movementImpossible = state.info;
 
-    return paginationDirection.map(
-      (direction) =>
-        movementImpossible[direction] && (
-          <Button key={direction} direction={direction} />
-        )
-    );
+    return paginationDirection.map((direction) => (
+      <Button
+        isVisible={movementImpossible[direction]}
+        key={direction}
+        direction={direction}
+      />
+    ));
   }
 
   function handleButtonClick(e) {
