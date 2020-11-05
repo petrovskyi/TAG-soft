@@ -36,10 +36,10 @@ export const Pagination = () => {
 
   return (
     <div className={styles.container}>
-      <Navigation />
       <ul className={styles.list} onClick={handlePaginationPageClick}>
         {createPagination(pagesAmount)}
       </ul>
+      <Navigation />
     </div>
   );
 };

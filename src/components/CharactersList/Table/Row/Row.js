@@ -1,7 +1,7 @@
 import React from "react";
 import { Cell } from "../Cell/Cell";
 
-export const Row = ({ keyChildren, data }) => {
+export const Row = ({ keyChildren, data, rowStyles }) => {
   const isReadyToShow = Array.isArray(data);
 
   function extractValues(element) {

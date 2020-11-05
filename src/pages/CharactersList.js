@@ -26,10 +26,11 @@ export const CharacterList = () => {
 
   return (
     <section>
+      <Pagination />
+      <hr />
       <Button action={handleSortByName} warning={true}>
         sort by name
       </Button>
-      <Pagination />
       <Table />
     </section>
   );

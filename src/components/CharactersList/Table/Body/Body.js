@@ -1,11 +1,17 @@
 import React from "react";
 import { Row } from "../Row/Row";
-import "./Body.module.scss";
+import styles from "../Table.module.scss";
 
 export const Body = ({ values = [] }) => {
   function generateRow(elements, key) {
     return (
-      <Row id={elements.id} key={key} keyChildren={key} data={elements}></Row>
+      <Row
+        rowStyles={styles.row}
+        id={elements.id}
+        key={key}
+        keyChildren={key}
+        data={elements}
+      ></Row>
     );
   }
 
@@ -13,5 +19,5 @@ export const Body = ({ values = [] }) => {
     return values.map((character, i) => generateRow(character, i));
   }
 
-  return <tbody>{generateTableBody(values)}</tbody>;
+  return <tbody className={styles.body}>{generateTableBody(values)}</tbody>;
 };
