@@ -45,6 +45,9 @@ export const Table = () => {
 
   function handleSelectCharacter(e) {
     const selectedRow = e.target.closest("tr");
+    const rowFromBody = selectedRow.closest("tbody");
+
+    if (!rowFromBody) return;
     const characterID = selectedRow.querySelector("td").textContent;
     const character = state.results.find(
       (character) => character.id === +characterID
