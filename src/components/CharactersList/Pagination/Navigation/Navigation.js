@@ -19,9 +19,13 @@ export const Navigation = () => {
   }
 
   function handleButtonClick(e) {
-    const button = e.target.textContent;
-    if (button === "next") dispatch({ type: "nextPage" });
-    if (button === "prev") dispatch({ type: "prevPage" });
+    const eventOnButton = e.target !== e.currentTarget;
+
+    if (eventOnButton) {
+      const button = e.target.textContent;
+      if (button === "next") dispatch({ type: "nextPage" });
+      if (button === "prev") dispatch({ type: "prevPage" });
+    }
   }
 
   const navigationButtons = generatePaginationButton();

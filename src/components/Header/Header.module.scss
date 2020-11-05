@@ -1,0 +1,31 @@
+header {
+  background-color: teal;
+  padding-left: 20px;
+  nav {
+    width: 100%;
+    padding: 10px 0;
+    ul {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      list-style: none;
+      color: white;
+      text-transform: uppercase;
+      li {
+        padding: 10px;
+        &:hover {
+          background-color: white;
+          color: teal;
+        }
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+}

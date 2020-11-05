@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Row } from "../Row/Row";
 import "./Body.module.scss";
 

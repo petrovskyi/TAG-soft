@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Context } from "../../Main/reducer";
 import { Head } from "./Head/Head";
 import { Body } from "./Body/Body";
-import style from "./Table.module.scss";
+import "./Table.module.scss";
 
 export const Table = () => {
   const { state, dispatch } = useContext(Context);

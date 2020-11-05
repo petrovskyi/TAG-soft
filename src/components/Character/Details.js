@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
 import { Context } from "../Main/reducer";
 import styles from "./Details.module.scss";
 

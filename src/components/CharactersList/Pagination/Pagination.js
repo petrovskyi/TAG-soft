@@ -5,7 +5,7 @@ import { service } from "../../../api/service";
 
 import styles from "./pagination.module.scss";
 
-export const PaginationList = () => {
+export const Pagination = () => {
   const { state, dispatch } = useContext(Context);
   const pagesAmount = state.info.pages;
   const currentPage = state.initPage;
