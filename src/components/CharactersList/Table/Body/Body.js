@@ -1,9 +1,12 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useContext } from "react";
 import { Row } from "../Row/Row";
+import "./Body.module.scss";
 
 export const Body = ({ values = [] }) => {
   function generateRow(elements, key) {
-    return <Row key={key} keyChildren={key} data={elements} />;
+    return (
+      <Row id={elements.id} key={key} keyChildren={key} data={elements}></Row>
+    );
   }
 
   function generateTableBody(data = []) {

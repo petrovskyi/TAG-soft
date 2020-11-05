@@ -1,23 +1,23 @@
 export const service = {
   apiURL: "https://rickandmortyapi.com/api",
   userQuery: "/character",
-  requestCount: 3,
-
+  retries: 3,
+  delay: 300,
   async retrieveDataFrom(url) {
-    let userRequest = url;
-    const response = await fetch(userRequest);
+    const response = await fetch(url);
+    try {
+      if (response.ok) return await response.json();
 
-    console.log(this.requestCount);
-    if (response.status !== 200 && this.requestCount !== 0) {
-      setTimeout(() => {
-        this.requestCount--;
-        this.retrieveDataFrom(userRequest);
-        console.log(url);
-        console.log(userRequest);
-      }, 1000);
+      if (this.retries > 0) {
+        this.retries--;
+        setTimeout(() => {
+          this.retrieveDataFrom(url);
+        }, this.delay);
+      } else {
+        throw new Error(response);
+      }
+    } catch (error) {
+      console.error(error);
     }
-
-    const data = await response.json();
-    return data;
   },
 };

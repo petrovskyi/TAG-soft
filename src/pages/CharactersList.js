@@ -1,16 +1,15 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useContext } from "react";
 import { Table } from "../components/CharactersList/Table/Table";
 import { PaginationList } from "../components/CharactersList/Pagination/Pagination";
+import { Button } from "../components/shared/Button";
 
+import { Context } from "../components/Main/reducer";
 import { service } from "../api/service";
-import {
-  Context,
-  reducer,
-  initialState,
-} from "../components/CharactersList/reducer";
+
+import styles from "../components/CharactersList/CharactersList.module.scss";
 
 export const CharacterList = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const { state, dispatch } = useContext(Context);
 
   useEffect(() => {
     const updateState = async () => {
@@ -19,16 +18,19 @@ export const CharacterList = () => {
     };
 
     updateState();
-  }, [state.initPage]);
+  }, [dispatch, state.initPage]);
+
+  function handleSortByName(e) {
+    dispatch({ type: "handleSort" });
+  }
 
   return (
     <section>
-      <Context.Provider value={{ dispatch, state }}>
-        <h2>characters list</h2>
-        <hr />
-        <Table />
-        <PaginationList />
-      </Context.Provider>
+      <PaginationList />
+      <Button action={handleSortByName} warning={true}>
+        sort by name
+      </Button>
+      <Table />
     </section>
   );
 };

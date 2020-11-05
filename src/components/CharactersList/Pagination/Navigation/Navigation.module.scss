@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  button {
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    color: grey;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px grey;
+    &:not(:last-of-type) {
+      margin-right: 10%;
+    }
+  }
+}

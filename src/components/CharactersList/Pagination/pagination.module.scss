@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    li {
+      cursor: pointer;
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
+    }
+  }
+}
+
+.selected {
+  color: red;
+}

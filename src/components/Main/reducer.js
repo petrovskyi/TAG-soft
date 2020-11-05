@@ -5,6 +5,8 @@ export const Context = React.createContext();
 
 export const initialState = {
   initPage: service.apiURL + service.userQuery,
+  sortByName: false,
+  selectedCharacter: null,
   info: {
     count: null,
     next: null,
@@ -16,6 +18,10 @@ export const initialState = {
 
 export function reducer(state, action) {
   switch (action.type) {
+    case "handleSelectCharacter":
+      return { ...state, selectedCharacter: action.payload };
+    case "handleSort":
+      return { ...state, sortByName: !state.sortByName };
     case "setFetchedData":
       return { ...state, ...action.payload };
     case "setPage":

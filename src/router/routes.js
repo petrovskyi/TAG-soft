@@ -1,5 +1,5 @@
 import { CharacterList } from "../pages/CharactersList";
-import { CharacterInfo } from "../pages/CharacterInfo";
+import { CharacterDetails } from "../pages/CharacterDetails";
 import { BlockLayout } from "../pages/BlockLayout";
 import { Home } from "../pages/Home";
 
@@ -11,7 +11,7 @@ export const routes = [
   },
   {
     path: "/characters/:id",
-    component: CharacterInfo,
+    component: CharacterDetails,
     exact: true,
   },
   {
