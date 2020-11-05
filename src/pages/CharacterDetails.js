@@ -11,7 +11,7 @@ export const CharacterDetails = () => {
 
   function handleHistoryGoBack() {
     history.push("/characters/");
-    dispatch({ type: "handleSelectCharacter", payload: null });
+    dispatch({ type: "SELECT_CHARACTER", payload: null });
   }
 
   return (

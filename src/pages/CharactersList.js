@@ -13,15 +13,15 @@ export const CharacterList = () => {
 
   useEffect(() => {
     const updateState = async () => {
-      const response = await service.retrieveDataFrom(state.initPage);
-      dispatch({ type: "setFetchedData", payload: response });
+      const response = await service.callAPI(state.initPage);
+      dispatch({ type: "SET_DATA_FROM_API_CALL", payload: response });
     };
 
     updateState();
   }, [dispatch, state.initPage]);
 
   function handleSortByName(e) {
-    dispatch({ type: "handleSort" });
+    dispatch({ type: "SORT_CHARACTERS_BY_NAME" });
   }
 
   return (

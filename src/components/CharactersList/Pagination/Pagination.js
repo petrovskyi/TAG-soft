@@ -31,7 +31,7 @@ export const Pagination = () => {
 
   function handlePaginationPageClick(e) {
     const newPage = e.target.id;
-    dispatch({ type: "setPage", payload: newPage });
+    dispatch({ type: "MOVE_TO_SELECTED_PAGE", payload: newPage });
   }
 
   return (

@@ -24,8 +24,8 @@ export const Navigation = () => {
 
     if (eventOnButton) {
       const button = e.target.textContent;
-      if (button === "next") dispatch({ type: "nextPage" });
-      if (button === "prev") dispatch({ type: "prevPage" });
+      if (button === "next") dispatch({ type: "MOVE_TO_NEXT_PAGE" });
+      if (button === "prev") dispatch({ type: "MOVE_TO_PREVIOUS_PAGE" });
     }
   }
 

@@ -18,17 +18,17 @@ export const initialState = {
 
 export function reducer(state, action) {
   switch (action.type) {
-    case "handleSelectCharacter":
+    case "SELECT_CHARACTER":
       return { ...state, selectedCharacter: action.payload };
-    case "handleSort":
+    case "SORT_CHARACTERS_BY_NAME":
       return { ...state, sortByName: !state.sortByName };
-    case "setFetchedData":
+    case "SET_DATA_FROM_API_CALL":
       return { ...state, ...action.payload };
-    case "setPage":
+    case "MOVE_TO_SELECTED_PAGE":
       return { ...state, initPage: action.payload };
-    case "nextPage":
+    case "MOVE_TO_NEXT_PAGE":
       return { ...state, initPage: state.info.next };
-    case "prevPage":
+    case "MOVE_TO_PREVIOUS_PAGE":
       return { ...state, initPage: state.info.prev };
     default:
       throw new Error();

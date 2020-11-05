@@ -53,7 +53,7 @@ export const Table = () => {
       (character) => character.id === +characterID
     );
 
-    dispatch({ type: "handleSelectCharacter", payload: character });
+    dispatch({ type: "SELECT_CHARACTER", payload: character });
     history.push("/characters/" + characterID);
   }
 
