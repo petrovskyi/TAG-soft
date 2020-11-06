@@ -6,7 +6,7 @@ export const Button = ({ children, warning, action }) => {
   return (
     <button
       className={warning ? styles.warning : styles.btn}
-      onClick={() => action()}
+      onClick={() => (action ? action() : {})}
     >
       {children}
     </button>

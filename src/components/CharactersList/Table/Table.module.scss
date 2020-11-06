@@ -7,15 +7,16 @@ tr {
 
 table {
   width: 100%;
-  max-width: 768px;
   margin: 0 auto;
   border-radius: 10px;
+  border: none !important;
   overflow: hidden;
   box-shadow: 0 0 10px grey;
-  border: none;
+  border-collapse: collapse;
+  border-style: hidden;
   thead {
+    box-shadow: 0 0 10px grey;
     background-color: grey;
-
     tr {
       @extend tr;
     }
@@ -30,10 +31,9 @@ table {
   tr {
     @extend tr;
     cursor: pointer;
-
+    color: grey;
     &:nth-of-type(2n) {
-      background-color: lightgray;
-      color: white;
+      background-color: whitesmoke;
     }
     &:hover {
       background-color: teal;

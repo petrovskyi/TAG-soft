@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../../../utils/context";
-import { Navigation } from "./Navigation/Navigation";
+
 import { service } from "../../../api/service";
 
 import styles from "./pagination.module.scss";
@@ -18,7 +18,10 @@ export const Pagination = () => {
 
       pagination.push(
         <li
-          style={{ color: selected ? "teal" : "lightgrey" }}
+          style={{
+            color: selected ? "teal" : "lightgrey",
+            fontWeight: selected ? "bold" : "normal",
+          }}
           key={"pagination" + page}
           id={id}
         >
@@ -39,7 +42,6 @@ export const Pagination = () => {
       <ul className={styles.list} onClick={handlePaginationPageClick}>
         {createPagination(pagesAmount)}
       </ul>
-      <Navigation />
     </div>
   );
 };

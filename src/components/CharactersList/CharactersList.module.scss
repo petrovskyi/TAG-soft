@@ -1,3 +1,11 @@
 .container {
-  //   background-color: burlywood;
+  width: 98%;
+  max-width: 420px;
+  margin: 0 auto;
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
 }

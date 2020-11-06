@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { Table } from "../components/CharactersList/Table/Table";
 import { Pagination } from "../components/CharactersList/Pagination/Pagination";
+import { Navigation } from "../components/CharactersList/Pagination/Navigation/Navigation";
 import { Button } from "../components/shared/Button";
 
 import { Context } from "../utils/context";
@@ -25,13 +26,15 @@ export const CharacterList = () => {
   }
 
   return (
-    <section className={styles.container}>
+    <section>
       <Pagination />
-
-      <Button action={handleSortByName} warning={true}>
-        sort by name
-      </Button>
-      <Table />
+      <div className={styles.container}>
+        <div className={styles.flex}>
+          <Navigation />
+          <Button action={handleSortByName}>sort by name</Button>
+        </div>
+        <Table />
+      </div>
     </section>
   );
 };

@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-
+  margin-bottom: 10px;
   .list {
     list-style: none;
     margin: 0;
@@ -9,6 +9,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 10px 0;
+    box-shadow: inset 5px 5px 10px grey;
 
     li {
       cursor: pointer;
@@ -18,8 +19,4 @@
       }
     }
   }
-}
-
-.selected {
-  color: red;
 }
