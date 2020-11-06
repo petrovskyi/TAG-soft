@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { Context } from "../../Main/reducer";
+import { Context } from "../../../utils/context";
 import { Head } from "./Head/Head";
 import { Body } from "./Body/Body";
 import "./Table.module.scss";

@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import Router from "../../router/router";
-import { Context, reducer, initialState } from "./reducer";
+import { Context, reducer, initialState } from "../../utils/context";
 
 const Main = () => {
   const [state, dispatch] = useReducer(reducer, initialState);

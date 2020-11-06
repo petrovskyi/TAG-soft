@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { Context } from "../components/Main/reducer";
+import { Context } from "../utils/context";
 import { Button } from "../components/shared/Button";
 import { Details } from "../components/Character/Details";
 import styles from "../components/Character/Details.module.scss";

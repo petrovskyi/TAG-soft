@@ -1,5 +1,5 @@
 import React from "react";
-import { service } from "../../api/service";
+import { service } from "../api/service";
 
 export const Context = React.createContext();
 

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Context } from "../Main/reducer";
+import { Context } from "../../utils/context";
 import styles from "./Details.module.scss";
 
 export const Details = () => {

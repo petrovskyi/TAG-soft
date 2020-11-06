@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Context } from "../../../Main/reducer";
+import { Context } from "../../../../utils/context";
 import { Button } from "../Button/Button";
 import style from "./Navigation.module.scss";
 

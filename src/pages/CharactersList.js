@@ -3,7 +3,7 @@ import { Table } from "../components/CharactersList/Table/Table";
 import { Pagination } from "../components/CharactersList/Pagination/Pagination";
 import { Button } from "../components/shared/Button";
 
-import { Context } from "../components/Main/reducer";
+import { Context } from "../utils/context";
 import { service } from "../api/service";
 
 import styles from "../components/CharactersList/CharactersList.module.scss";

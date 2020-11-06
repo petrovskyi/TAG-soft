@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Context } from "../../Main/reducer";
+import { Context } from "../../../utils/context";
 import { Navigation } from "./Navigation/Navigation";
 import { service } from "../../../api/service";
 
@@ -18,7 +18,7 @@ export const Pagination = () => {
 
       pagination.push(
         <li
-          style={{ color: selected ? "red" : "lightgrey" }}
+          style={{ color: selected ? "teal" : "lightgrey" }}
           key={"pagination" + page}
           id={id}
         >
